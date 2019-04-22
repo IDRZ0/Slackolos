@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">KañumaMusic</string>
-    <string name="app_name1">KañumaMusic</string>
+    <string name="sing_in">Iniciar Sesion</string>
+    <string name="user">Nombre De Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="sing_up">Registrarse</string>
 </resources>
