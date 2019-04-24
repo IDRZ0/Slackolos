@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:orientation="horizontal"
-    android:background="@drawable/button_background1"
-    >
+    android:background="@drawable/button_background1">
 
     <ImageView
         android:id="@+id/imagenCancion"
@@ -42,4 +41,4 @@
 
     </LinearLayout>
 
-</>
+</LinearLayout>
