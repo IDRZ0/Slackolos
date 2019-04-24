@@ -40,15 +40,15 @@ public class CancionAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View vista, ViewGroup parent) {
-        /*ViewHolder viewHolder;
+        ViewHolder viewHolder;
         if (vista == null) {
             viewHolder = new ViewHolder();
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             vista = inflater.inflate(R.layout.cancion_layout, null);
 
-            viewHolder.imagenCancion = vista.findViewById(R.id.imagen);
-            viewHolder.nombreCancion = vista.findViewById(R.id.nombre);
+            viewHolder.imagenCancion = vista.findViewById(R.id.imagenCancion);
+            viewHolder.nombreCancion = vista.findViewById(R.id.nombreCancion);
             viewHolder.cancionArtista = vista.findViewById(R.id.cancionArtista);
             vista.setTag(viewHolder);
         } else {
@@ -58,7 +58,7 @@ public class CancionAdapter extends BaseAdapter {
         Cancion cancionActual = songs.get(position);
         viewHolder.imagenCancion.setImageResource(cancionActual.getImagenCancion());
         viewHolder.nombreCancion.setText(cancionActual.getNombreCancion());
-        viewHolder.cancionArtista.setText(cancionActual.getCancionArtsta()); */
+        viewHolder.cancionArtista.setText(cancionActual.getCancionArtsta());
         return vista;
     }
 
