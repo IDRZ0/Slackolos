@@ -5,4 +5,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gra"/>
+    android:background="@drawable/gra">
+
+        <ImageView
+           android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/back"
+            />
+
+
+        <ImageView
+            android:id="@+id/imagenCancion"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_below="@id/back"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cover"
+            />
+
+    <LinearLayout
+        android:id="@+id/nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagenCancion"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/nombreCancion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Cancion"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/cancionArtista"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="Artista"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombres"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_weight="10"
+            android:text="00:13"
+            android:textColor="@color/colorPrimary"
+            tools:text="00:13" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/barra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/progressDuration"
+            android:layout_toEndOf="@id/progress"
+            android:layout_weight="80" />
+
+        <TextView
+            android:id="@+id/progressDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="03:25"
+            android:textColor="@color/colorPrimary"
+            tools:text="03:25" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/barras"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/anterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous"
+            />
+        <ImageView
+            android:id="@+id/reproducir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/play"
+            />
+        <ImageView
+            android:id="@+id/siguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
