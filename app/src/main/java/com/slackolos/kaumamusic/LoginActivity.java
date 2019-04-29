@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.slackolos.kaumamusic.constantes.Constantes;
+
 public class LoginActivity extends AppCompatActivity  {
 
     private Context mcontext;
@@ -35,24 +37,13 @@ public class LoginActivity extends AppCompatActivity  {
                 String nombre = musuario.getText().toString();
                 String pass = mcontraseña.getText().toString();
 
-                if(nombre.isEmpty()){
-                    Toast.makeText(mcontext, "Debe introducir el usuario", Toast.LENGTH_SHORT).show();
-                }
-
-                if(pass.isEmpty()){
-                    Toast.makeText(mcontext, "Debe introducir la contraseña", Toast.LENGTH_SHORT).show();
-                }
-
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mcontext);
-               // String usuarioG = preferences.getString()
-
-                if(nombre.length()!=0 && pass.length()!=0){
-                    Intent intent = getIntent();
-                    Intent ingresar = new Intent(mcontext, MainActivity.class);
-                    ingresar.putExtra("usuario", nombre);
-                    ingresar.putExtra("password", pass);
-                    setResult(RESULT_OK,intent);
-                    startActivity(ingresar);
+                if(usuarioValido(nombre,pass)){
+                    Intent intent = new Intent(mcontext, MainActivity.class);
+                    intent.putExtra(Constantes.USUARIO, nombre);
+                    intent.putExtra(Constantes.PASSWORD, pass);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(mcontext, "ERROR: NOMBRE O CONTRASEÑA INCORRECTA", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -67,6 +58,24 @@ public class LoginActivity extends AppCompatActivity  {
                 startActivity(registrar);
             }
         });
+    }
+
+    private boolean usuarioValido(String usuario, String password) {
+        if(usuario.isEmpty()){
+            Toast.makeText(mcontext, "Debe introducir el usuario", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if(password.isEmpty()){
+            Toast.makeText(mcontext, "Debe introducir la contraseña", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mcontext);
+        String usuarioG = preferences.getString(Constantes.P_USUARIO,"");
+        String passG = preferences.getString(Constantes.P_PASSWORD,"");
+
+        return usuario.equals(usuarioG) && password.equals(passG);
     }
 
 }
