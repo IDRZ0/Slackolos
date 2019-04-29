@@ -10,18 +10,17 @@
 
     <ImageView
         android:id="@+id/imagenWarn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:adjustViewBounds="true"
+        android:layout_marginEnd="20dp"
         android:src="@drawable/warn" />
 
     <TextView
         android:id="@+id/textoWarn"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_weight="9"
         android:textColor="#98CAE4"
         android:textSize="20sp"
         android:textStyle="bold"

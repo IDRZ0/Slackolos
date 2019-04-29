@@ -11,6 +11,8 @@ public class Inventario {
     public static List<Cancion> getCanciones() {
         List<Cancion> canciones = new ArrayList<>();
         canciones.add(new Cancion(1,"m","n", R.drawable.cover));
+        canciones.add(new Cancion(2,"m","n", R.drawable.cover));
+        canciones.add(new Cancion(3,"m","n", R.drawable.cover));
         return canciones;
     }
 }
