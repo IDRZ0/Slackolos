@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.slackolos.kaumamusic.constantes.Constantes;
@@ -78,15 +80,47 @@ public class RegisterActivity extends AppCompatActivity {
                 if(user.getText().toString().isEmpty()){
                     LayoutInflater inflater = getLayoutInflater();
                     View layouttoast = inflater.inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.viewToast));
+                    ((TextView) layouttoast.findViewById(R.id.textoWarn)).setText("INGRESE EL NOMBRE DE USUARIO");
+                    Toast mensaje = new Toast(getBaseContext());
+                    mensaje.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                    mensaje.setView(layouttoast);
+                    mensaje.setDuration(Toast.LENGTH_LONG);
+                    mensaje.show();
+                    return;
                 }
 
                 if(pass.getText().toString().isEmpty()){
                     LayoutInflater inflater = getLayoutInflater();
                     View layouttoast = inflater.inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.viewToast));
+                    ((TextView) layouttoast.findViewById(R.id.textoWarn)).setText("INGRESE LA CONTRASEÑA");
+                    Toast mensaje = new Toast(getBaseContext());
+                    mensaje.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                    mensaje.setView(layouttoast);
+                    mensaje.setDuration(Toast.LENGTH_LONG);
+                    mensaje.show();
+                    return;
                 }
 
                 final Dialog dialog = new Dialog(mContext);
                 dialog.setContentView(R.layout.pass_confir_layout);
+                final EditText pass2 = dialog.findViewById(R.id.password2);
+                Button confir = dialog.findViewById(R.id.botonConfir);
+                confir.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String password1 = pass.getText().toString();
+                        String password2 = pass2.getText().toString();
+
+                        if(password1.equals(password2)) {
+                            dialog.dismiss();
+                        } else {
+                            pass2.setError("NO COINCIDEN");
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                dialog.setCancelable(false);
+                dialog.show();
 
                 Usuario usuario1 = new Usuario();
                 usuario1.setNombre(user.getText().toString());
