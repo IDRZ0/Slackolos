@@ -42,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         mContext = this;
 
         parent = new LinearLayout(mContext);
+        parent.setBackgroundResource(R.drawable.gra);
         parent.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
@@ -67,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         registrar = new Button(mContext);
         registrar.setText("Registrar");
         registrar.setTextSize(22);
+        registrar.setBackgroundResource(R.drawable.button_background2);
         registrar.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
