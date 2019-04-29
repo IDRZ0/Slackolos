@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         parent.addView(tPass);
 
         pass = new EditText(mContext);
+        pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         parent.addView(pass);
 
         registrar = new Button(mContext);
@@ -101,26 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                final Dialog dialog = new Dialog(mContext);
-                dialog.setContentView(R.layout.pass_confir_layout);
-                final EditText pass2 = dialog.findViewById(R.id.password2);
-                Button confir = dialog.findViewById(R.id.botonConfir);
-                confir.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String password1 = pass.getText().toString();
-                        String password2 = pass2.getText().toString();
-
-                        if(password1.equals(password2)) {
-                            dialog.dismiss();
-                        } else {
-                            pass2.setError("NO COINCIDEN");
-                            dialog.dismiss();
-                        }
-                    }
-                });
-                dialog.setCancelable(false);
-                dialog.show();
+                confirPass();
 
                 Usuario usuario1 = new Usuario();
                 usuario1.setNombre(user.getText().toString());
@@ -140,6 +123,31 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void confirPass() {
+        final Dialog dialog = new Dialog(mContext);
+        dialog.setContentView(R.layout.pass_confir_layout);
+
+        final EditText pass2 = dialog.findViewById(R.id.contrasena);
+        Button confir = dialog.findViewById(R.id.botonConfir);
+
+        confir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password1 = pass.getText().toString();
+                String password2 = pass2.getText().toString();
+
+                if(password1.equals(password2)) {
+                    dialog.dismiss();
+                } else {
+                    dialog.dismiss();
+                    pass2.setError("NO COINCIDEN");
+                }
+            }
+        });
+        dialog.setCancelable(false);
+        dialog.show();
     }
 
 }

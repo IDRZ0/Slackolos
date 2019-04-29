@@ -67,4 +67,9 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Bienvenid@ "+usuario, Toast.LENGTH_SHORT).show();
     }
 
+    public void listaCancion(View view) {
+        Intent intent = new Intent(mcontext, ListaCancionActivity.class);
+        startActivity(intent);
+    }
+
 }

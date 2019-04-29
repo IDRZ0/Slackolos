@@ -13,7 +13,8 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:scaleType="center"
-        android:src="@drawable/user" />
+        android:src="@drawable/user"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -22,13 +23,16 @@
         android:text="Usuario"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_marginBottom="16dp"
         />
 
     <Button
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="Canciones"
+        android:onClick="listaCancion"
         android:gravity="center"
+        android:layout_marginBottom="16dp"
         />
 
     <Button
@@ -36,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="Playlists"
         android:gravity="center"
+        android:layout_marginBottom="16dp"
         />
     <Button
         android:layout_width="120dp"

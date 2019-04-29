@@ -51,23 +51,20 @@ public class LoginActivity extends AppCompatActivity  {
 
 
     public void registrar(View view){
-        mIniciar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registrar = new Intent(LoginActivity.this,RegisterActivity.class);
-                startActivity(registrar);
-            }
-        });
+      Intent intent = new Intent(mcontext, RegisterActivity.class);
+      startActivityForResult(intent, Constantes.REGISTRO);
     }
+
+
 
     private boolean usuarioValido(String usuario, String password) {
         if(usuario.isEmpty()){
-            Toast.makeText(mcontext, "Debe introducir el usuario", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mcontext, "DEBE INTRODUCIR EL NOMBRE", Toast.LENGTH_SHORT).show();
             return false;
         }
 
         if(password.isEmpty()){
-            Toast.makeText(mcontext, "Debe introducir la contraseña", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mcontext, "DEBE INTRODUCIR LA CONTRASEÑA", Toast.LENGTH_SHORT).show();
             return false;
         }
 

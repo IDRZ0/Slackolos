@@ -8,4 +8,8 @@ public class Constantes {
 
     public static final String USUARIO = "usuario";
     public static final String PASSWORD = "password";
+
+    public static final int REGISTRO = 1;
+
+    public static final String CANCION = "cancion";
 }
