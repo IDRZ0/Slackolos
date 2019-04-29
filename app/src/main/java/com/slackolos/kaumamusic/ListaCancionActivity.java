@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.slackolos.kaumamusic.adapters.CancionAdapter;
 import com.slackolos.kaumamusic.constantes.Constantes;
+import com.slackolos.kaumamusic.inventario.Inventario;
 import com.slackolos.kaumamusic.listas.Cancion;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class ListaCancionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
+        mContext = this;
 
         initViews();
         addEvents();
@@ -35,7 +37,7 @@ public class ListaCancionActivity extends AppCompatActivity {
 
     private void initViews(){
         canciones = findViewById(R.id.canciones);
-       // cancionArray = Inventario.getCanciones();
+        cancionArray = Inventario.getCanciones();
         cancionAdapter = new CancionAdapter(mContext, cancionArray);
         canciones.setAdapter(cancionAdapter);
     }

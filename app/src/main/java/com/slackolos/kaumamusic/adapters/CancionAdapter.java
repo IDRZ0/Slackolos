@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.slackolos.kaumamusic.ListaCancionActivity;
 import com.slackolos.kaumamusic.R;
 import com.slackolos.kaumamusic.listas.Cancion;
 
