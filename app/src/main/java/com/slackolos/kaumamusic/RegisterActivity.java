@@ -144,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.dismiss();
                 } else {
                     dialog.dismiss();
-                    pass2.setError("NO COINCIDEN");
+                    pass2.setError("LAS CONTRASEÑAS NO COINCIDEN");
                 }
             }
         });
