@@ -9,17 +9,16 @@
 
     <ImageView
         android:id="@+id/imagenPlaylist"
-        android:layout_width="0dp"
+        android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_weight="3"
         android:src="@drawable/gra"
         />
 
     <TextView
         android:id="@+id/nombrePlaylist"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="7"
+        android:layout_marginStart="16dp"
         android:gravity="center"
         android:text="Nombre playlist"
         android:textStyle="bold"

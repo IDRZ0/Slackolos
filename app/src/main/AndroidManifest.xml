@@ -28,6 +28,12 @@
         <activity android:name=".CancionActivity">
 
         </activity>
+        <activity android:name=".PlaylistActivity">
+
+        </activity>
+        <activity android:name=".ArtistaActivity">
+
+        </activity>
     </application>
 
 </manifest>

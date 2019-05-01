@@ -45,7 +45,7 @@ public class PlaylistAdapter extends BaseAdapter{
             viewHolder = new ViewHolder();
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            vista = inflater.inflate(R.layout.artista_layout, null);
+            vista = inflater.inflate(R.layout.playlist_layout, null);
 
             viewHolder.imagenPlaylist = vista.findViewById(R.id.imagenPlaylist);
             viewHolder.nombrePlaylist = vista.findViewById(R.id.nombrePlaylist);

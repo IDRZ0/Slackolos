@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         recibirDatos();
 
-
-
         if (this.toolbar != null) {
 
             this.toolbar.setTitle(R.string.app_name);
@@ -64,11 +62,21 @@ public class MainActivity extends AppCompatActivity {
         String usuario = intent.getStringExtra("usuario");
         String contraseña = intent.getStringExtra("password");
 
-        Toast.makeText(this, "Bienvenid@ "+usuario, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bienvenid@ " + usuario, Toast.LENGTH_SHORT).show();
     }
 
     public void listaCancion(View view) {
         Intent intent = new Intent(mcontext, ListaCancionActivity.class);
+        startActivity(intent);
+    }
+
+    public void listaPlaylist(View view) {
+        Intent intent = new Intent(mcontext, PlaylistActivity.class);
+        startActivity(intent);
+    }
+
+    public void listaArtista(View view) {
+        Intent intent = new Intent(mcontext, ArtistaActivity.class);
         startActivity(intent);
     }
 
