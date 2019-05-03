@@ -80,4 +80,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void listaFiesta(View view) {
+        Intent intent = new Intent(mcontext, FiestasActivity.class);
+        startActivity(intent);
+    }
+
 }
