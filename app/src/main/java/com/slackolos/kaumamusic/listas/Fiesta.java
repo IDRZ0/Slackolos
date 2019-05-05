@@ -1,4 +1,4 @@
-package com.slackolos.kaumamusic.fiestas;
+package com.slackolos.kaumamusic.listas;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,9 +8,6 @@ public class Fiesta {
     private int imagen;
     private String nombre;
 
-    public Fiesta(){
-
-    }
     public Fiesta(int imagen, String nombre) {
         this.imagen = imagen;
         this.nombre = nombre;

@@ -3,6 +3,7 @@ package com.slackolos.kaumamusic.inventario;
 import com.slackolos.kaumamusic.R;
 import com.slackolos.kaumamusic.listas.Artista;
 import com.slackolos.kaumamusic.listas.Cancion;
+import com.slackolos.kaumamusic.listas.Fiesta;
 import com.slackolos.kaumamusic.listas.Playlist;
 
 import java.util.ArrayList;
@@ -30,6 +31,14 @@ public class Inventario {
         artistas.add(new Artista(1,"Sech", R.drawable.cover));
         artistas.add(new Artista(2,"Darell", R.drawable.cover));
         return artistas;
+    }
+
+    public static ArrayList<Fiesta> getFiestas() {
+        ArrayList<Fiesta> fiestas = new ArrayList<>();
+        fiestas.add(new Fiesta(R.drawable.loto,"LOTO"));
+        fiestas.add(new Fiesta(R.drawable.loki,"LOKI"));
+        fiestas.add(new Fiesta(R.drawable.beyond,"BEYOND"));
+        return fiestas;
     }
 
 }

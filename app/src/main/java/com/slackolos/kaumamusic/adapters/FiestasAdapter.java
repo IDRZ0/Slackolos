@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.slackolos.kaumamusic.R;
-import com.slackolos.kaumamusic.fiestas.Fiesta;
+import com.slackolos.kaumamusic.listas.Fiesta;
 
 import java.util.ArrayList;
 
 public class FiestasAdapter extends RecyclerView.Adapter<FiestasAdapter.ViewHolderFiestas>
     implements View.OnClickListener{
 
-    ArrayList <Fiesta> listaFiestas;
+    private ArrayList<Fiesta> listaFiestas;
     private View.OnClickListener listener;
 
     public FiestasAdapter(ArrayList<Fiesta> listaFiestas) {
@@ -27,7 +27,6 @@ public class FiestasAdapter extends RecyclerView.Adapter<FiestasAdapter.ViewHold
     @Override
     public ViewHolderFiestas onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_fiestas,null,false);
-
         view.setOnClickListener(this);
         return new ViewHolderFiestas(view);
     }
