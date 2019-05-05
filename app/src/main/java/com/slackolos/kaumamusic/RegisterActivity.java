@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.slackolos.kaumamusic.constantes.Constantes;
+import com.slackolos.kaumamusic.database.BaseHelper;
 import com.slackolos.kaumamusic.usuario.Usuario;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -105,19 +106,22 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                confirPass();
+                // confirPass();
 
                 Usuario usuario1 = new Usuario();
                 usuario1.setNombre(user.getText().toString());
                 usuario1.setPassword(pass.getText().toString());
 
+                BaseHelper baseHelper = new BaseHelper(mContext);
+                baseHelper.insertar(usuario1);
+
                 String json = new Gson().toJson(usuario1);
 
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+               /* SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mContext);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString(Constantes.P_USUARIO, user.getText().toString());
                 editor.putString(Constantes.P_PASSWORD,pass.getText().toString());
-                editor.apply();
+                editor.apply(); */
 
                 Intent intent = new Intent();
                 intent.putExtra(Constantes.REGISTRAR, json);

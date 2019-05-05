@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.slackolos.kaumamusic.constantes.Constantes;
+import com.slackolos.kaumamusic.database.BaseHelper;
 
 public class LoginActivity extends AppCompatActivity  {
 
@@ -68,11 +69,13 @@ public class LoginActivity extends AppCompatActivity  {
             return false;
         }
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mcontext);
+       /* SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(mcontext);
         String usuarioG = preferences.getString(Constantes.P_USUARIO,"");
         String passG = preferences.getString(Constantes.P_PASSWORD,"");
+        return usuario.equals(usuarioG) && password.equals(passG); */
 
-        return usuario.equals(usuarioG) && password.equals(passG);
+        BaseHelper baseHelper = new BaseHelper(this.mcontext);
+        return baseHelper.login(usuario,password);
     }
 
 }
