@@ -36,7 +36,7 @@ public class Inventario {
     public static ArrayList<Fiesta> getFiestas() {
         ArrayList<Fiesta> fiestas = new ArrayList<>();
         fiestas.add(new Fiesta(R.drawable.loto,"LOTO"));
-        fiestas.add(new Fiesta(R.drawable.loki,"LOKI"));
+        fiestas.add(new Fiesta(R.drawable.legend,"LEGEND"));
         fiestas.add(new Fiesta(R.drawable.beyond,"BEYOND"));
         fiestas.add(new Fiesta(R.drawable.kanuma, "KAÑUMA BAR"));
         return fiestas;

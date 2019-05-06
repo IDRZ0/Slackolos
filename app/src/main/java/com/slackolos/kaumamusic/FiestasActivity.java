@@ -48,6 +48,16 @@ public class FiestasActivity extends AppCompatActivity {
                                 Uri.parse("geo:0,0?q=-16.531849, -68.073612 (" + nombre + ")"));
                         startActivity(intent);
                     }
+                    else if(listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre() == "KAÑUMA BAR"){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("geo:0,0?q=-16.577840, -68.163113 (" + nombre + ")"));
+                        startActivity(intent);
+                    }
+                    else if(listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre() == "LEGEND"){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("geo:0,0?q=-16.505185, -68.128834 (" + nombre + ")"));
+                        startActivity(intent);
+                    }
                 }
             });
             recyclerFiestas.setAdapter(adapter);
