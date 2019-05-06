@@ -1,5 +1,7 @@
 package com.slackolos.kaumamusic;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +38,16 @@ public class FiestasActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getApplicationContext(), ""+listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_SHORT).show();
+                    String nombre = listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre();
+                    if(listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre() == "LOTO"){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("geo:0,0?q=-16.540776, -68.070361 (" + nombre + ")"));
+                        startActivity(intent);
+                    } else if(listaFiestas.get(recyclerFiestas.getChildAdapterPosition(v)).getNombre() == "BEYOND"){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("geo:0,0?q=-16.531849, -68.073612 (" + nombre + ")"));
+                        startActivity(intent);
+                    }
                 }
             });
             recyclerFiestas.setAdapter(adapter);

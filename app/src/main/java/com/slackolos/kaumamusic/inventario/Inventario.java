@@ -38,6 +38,7 @@ public class Inventario {
         fiestas.add(new Fiesta(R.drawable.loto,"LOTO"));
         fiestas.add(new Fiesta(R.drawable.loki,"LOKI"));
         fiestas.add(new Fiesta(R.drawable.beyond,"BEYOND"));
+        fiestas.add(new Fiesta(R.drawable.kanuma, "KAÑUMA BAR"));
         return fiestas;
     }
 
