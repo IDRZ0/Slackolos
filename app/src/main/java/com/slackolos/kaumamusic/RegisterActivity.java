@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         parent.setOrientation(LinearLayout.VERTICAL);
 
         tUser = new TextView(mContext);
-        tUser.setText("Nombre de Usuario");
+        tUser.setText("Nombre De Usuario");
         tUser.setTextSize(22);
         parent.addView(tUser);
 
@@ -126,6 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra(Constantes.REGISTRAR, json);
                 setResult(RESULT_OK,intent);
+                Toast.makeText(mContext,"USUARIO " + user.getText().toString() + " REGISTRADO",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

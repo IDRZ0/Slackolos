@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.content.Context.*;
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (this.toolbar != null) {
 
-            this.toolbar.setTitle(R.string.app_name);
-            this.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
+         //   this.toolbar.setTitle(R.string.app_name);
+         //   this.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
 
             drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
             drawerToggle.setDrawerIndicatorEnabled(false);
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String usuario = intent.getStringExtra("usuario");
         String contraseña = intent.getStringExtra("password");
+        TextView tUser = findViewById(R.id.tUser);
+        tUser.setText(usuario);
 
         Toast.makeText(this, "Bienvenid@ " + usuario, Toast.LENGTH_SHORT).show();
     }

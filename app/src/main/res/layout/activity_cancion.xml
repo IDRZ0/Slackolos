@@ -75,8 +75,8 @@
             android:layout_weight="80" >
 
         </android.support.v7.widget.AppCompatSeekBar>
-        <TextView
 
+        <TextView
             android:id="@+id/progressDuration"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
