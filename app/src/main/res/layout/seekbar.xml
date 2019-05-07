@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/barras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombres"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/progress"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:text="00:13"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/barra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/progressDuration"
+            android:layout_toEndOf="@id/progress"
+            android:layout_weight="80" >
+
+        </android.support.v7.widget.AppCompatSeekBar>
+
+        <TextView
+            android:id="@+id/progressDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="03:25"
+            android:textColor="@color/colorPrimary"
+            />
+
+
+    </LinearLayout>

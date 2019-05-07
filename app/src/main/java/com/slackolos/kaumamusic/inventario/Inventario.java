@@ -13,9 +13,9 @@ public class Inventario {
 
     public static List<Cancion> getCanciones() {
         List<Cancion> canciones = new ArrayList<>();
-        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover));
-        canciones.add(new Cancion(2,"Si Se Da","Myke Towers", R.drawable.cover));
-        canciones.add(new Cancion(3,"Que Le De","Rauw Alejandro", R.drawable.cover));
+        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover,"http://youtubemp33.net/@download/320-5cd183c57491f-8920000/mp3/8JnfIa84TnU/Clean%2BBandit%2B-%2BSolo%2B%2528feat.%2BDemi%2BLovato%2529%2B%255BOfficial%2BVideo%255D.mp3"));
+        canciones.add(new Cancion(2,"Si Se Da","Myke Towers", R.drawable.cover,""));
+        canciones.add(new Cancion(3,"Que Le De","Rauw Alejandro", R.drawable.cover,"http://youtubemp33.net/@download/320-5cd183c57491f-8920000/mp3/8JnfIa84TnU/Clean%2BBandit%2B-%2BSolo%2B%2528feat.%2BDemi%2BLovato%2529%2B%255BOfficial%2BVideo%255D.mp3"));
         return canciones;
     }
 

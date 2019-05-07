@@ -16,11 +16,15 @@ public class Cancion {
     @Expose
     private int imagenCancion;
 
-   public Cancion (int idCancion, String nombreCancion, String cancionArtsta, int imagenCancion) {
+    @Expose
+    private String url;
+
+   public Cancion (int idCancion, String nombreCancion, String cancionArtsta, int imagenCancion, String url) {
        this.idCancion = idCancion;
        this.nombreCancion = nombreCancion;
        this.cancionArtsta = cancionArtsta;
        this.imagenCancion = imagenCancion;
+       this.url = url;
    }
 
     public int getIdCancion() {
@@ -54,4 +58,8 @@ public class Cancion {
     public void setImagenCancion(int imagenCancion) {
         this.imagenCancion = imagenCancion;
     }
+
+    public String getUrl() { return url; }
+
+    public void setUrl(String url) { this.url = url; }
 }
