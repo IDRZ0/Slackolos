@@ -42,7 +42,7 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         nombreCancion = findViewById(R.id.nombreCancion);
         cancionArtista = findViewById(R.id.cancionArtista);
         playButton = findViewById(R.id.play);
-
+        pauseButton = findViewById(R.id.pause);
 
         Intent intent = getIntent();
         String json = intent.getStringExtra(Constantes.CANCION);
@@ -55,20 +55,16 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playButton.setBackgroundResource(R.drawable.pause);
                 playMp3(url);
-                if(playButton.getBackground().equals(R.drawable.pause)){
-                    playButton.setBackgroundResource(R.drawable.play);
-                    mediaPlayer.pause();
-                } //else if(playButton.getBackground().equals(R.drawable.pause)){ }
             }
         });
-    }
 
-   // public void play(View view) { playMp3("http://youtubemp33.net/@download/320-5cd183c57491f-8920000/mp3/8JnfIa84TnU/Clean%2BBandit%2B-%2BSolo%2B%2528feat.%2BDemi%2BLovato%2529%2B%255BOfficial%2BVideo%255D.mp3"); }
-
-    public void pause(View view) {
-        mediaPlayer.pause();
+        pauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer.pause();
+            }
+        });
     }
 
     public void playMp3(String _link){

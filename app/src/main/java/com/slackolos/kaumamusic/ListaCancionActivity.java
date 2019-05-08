@@ -12,7 +12,9 @@ import com.google.gson.Gson;
 import com.slackolos.kaumamusic.adapters.CancionAdapter;
 import com.slackolos.kaumamusic.constantes.Constantes;
 import com.slackolos.kaumamusic.inventario.Inventario;
+import com.slackolos.kaumamusic.listas.Artista;
 import com.slackolos.kaumamusic.listas.Cancion;
+import com.slackolos.kaumamusic.listas.Playlist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,18 +33,38 @@ public class ListaCancionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         mContext = this;
 
-        initViews();
+        Intent intent = getIntent();
+        String string = intent.getStringExtra(Constantes.PLAYLIST_1);
+        String string1 = intent.getStringExtra(Constantes.ARTISTA);
+
+        Playlist playlist = new Gson().fromJson(string, Playlist.class);
+        Artista artista = new  Gson().fromJson(string1, Artista.class);
+
+        canciones = findViewById(R.id.canciones);
+
+        if(playlist != null){
+            if(playlist.getNombrePlaylist().equals("Fiesta")){
+                cancionArray = Inventario.Fiesta();
+            } else if(playlist.getNombrePlaylist().equals("Estudiar")){
+                cancionArray = Inventario.Estudiar();
+            }
+        } else if(artista != null) {
+            if (artista.getNombreArtista().equals("Darell")) {
+                cancionArray = Inventario.Darell();
+            } else if (artista.getNombreArtista().equals("Sech")) {
+                cancionArray = Inventario.Sech();
+            }
+        } else {
+            cancionArray = Inventario.Todas();
+        }
+
         addEvents();
     }
 
-    private void initViews(){
-        canciones = findViewById(R.id.canciones);
-        cancionArray = Inventario.getCanciones();
+    public void addEvents(){
         cancionAdapter = new CancionAdapter(mContext, cancionArray);
         canciones.setAdapter(cancionAdapter);
-    }
 
-    private void addEvents(){
         canciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

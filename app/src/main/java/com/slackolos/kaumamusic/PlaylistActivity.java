@@ -43,10 +43,10 @@ public class PlaylistActivity extends AppCompatActivity {
         playlists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Playlist playlist = playlistArray.get(position);
-                Intent intent = new Intent(mContext, ListaCancionActivity.class);
-                intent.putExtra(Constantes.PLAYLIST, new Gson().toJson(playlist));
-                startActivity(intent);
+                    Playlist playlist = playlistArray.get(position);
+                    Intent intent = new Intent(mContext, ListaCancionActivity.class);
+                    intent.putExtra(Constantes.PLAYLIST_1, new Gson().toJson(playlist));
+                    startActivity(intent);
             }
         });
     }
