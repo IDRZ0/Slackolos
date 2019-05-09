@@ -13,15 +13,15 @@ public class Inventario {
 
     public static List<Playlist> getPlaylists() {
         List<Playlist> playlists = new ArrayList<>();
-        playlists.add(new Playlist(1, "Fiesta", R.drawable.cover));
-        playlists.add(new Playlist(2,"Estudiar", R.drawable.cover));
+        playlists.add(new Playlist(1, "Fiesta", R.drawable.party));
+        playlists.add(new Playlist(2,"Estudiar", R.drawable.study));
         return playlists;
     }
 
     public static List<Artista> getArtistas() {
         List<Artista> artistas = new ArrayList<>();
-        artistas.add(new Artista(1,"Sech", R.drawable.cover));
-        artistas.add(new Artista(2,"Darell", R.drawable.cover));
+        artistas.add(new Artista(1,"Sech", R.drawable.sech));
+        artistas.add(new Artista(2,"Paulo Londra", R.drawable.paulo));
         return artistas;
     }
 
@@ -36,30 +36,28 @@ public class Inventario {
 
     public static List<Cancion> Fiesta() {
         List<Cancion> canciones = new ArrayList<>();
-        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
-        canciones.add(new Cancion(2,"Si Se Da","Myke Towers", R.drawable.cover,""));
-        canciones.add(new Cancion(3,"Que Le De","Rauw Alejandro", R.drawable.cover,"http://youtubemp33.net/@download/320-5cd183c57491f-8920000/mp3/8JnfIa84TnU/Clean%2BBandit%2B-%2BSolo%2B%2528feat.%2BDemi%2BLovato%2529%2B%255BOfficial%2BVideo%255D.mp3"));
+        canciones.add(new Cancion(1,"La Resaka","Supermerk2", R.drawable.la_resaka,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/la%20resaka-supermerk2.mp3?alt=media&token=da46df14-8a51-4f86-a3f2-e60531905fe7"));
+        canciones.add(new Cancion(2,"Otro Trago","Sech", R.drawable.otro_trago,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
+        canciones.add(new Cancion(3,"Calma","Pedro Capo", R.drawable.calma,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Pedro%20Cap%C3%B3%20Farruko%20-%20Calma%20(Remix%20-%20Official%20Video).mp3?alt=media&token=7440426f-a60d-45de-b943-2e18aa9de1b5"));
         return canciones;
     }
 
     public static List<Cancion> Estudiar() {
         List<Cancion> canciones = new ArrayList<>();
-        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
-        canciones.add(new Cancion(2,"Si Se Da","Myke Towers", R.drawable.cover,""));
+        canciones.add(new Cancion(1,"Calma","Pedro Capo", R.drawable.calma,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Pedro%20Cap%C3%B3%20Farruko%20-%20Calma%20(Remix%20-%20Official%20Video).mp3?alt=media&token=7440426f-a60d-45de-b943-2e18aa9de1b5"));
+        canciones.add(new Cancion(2,"Sunflower","Post Malone", R.drawable.sunflower,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Post%20Malone%20Swae%20Lee%20-%20Sunflower.mp3?alt=media&token=feab98f3-c1b9-48da-a944-50bd881b83ae"));
         return canciones;
     }
 
-    public static List<Cancion> Darell() {
+    public static List<Cancion> Paulo() {
         List<Cancion> canciones = new ArrayList<>();
-        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
-        canciones.add(new Cancion(2,"Si Se Da","Myke Towers", R.drawable.cover,""));
+        canciones.add(new Cancion(1,"Tal Vez","Paulo Londra", R.drawable.tal_vez,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Paulo%20Londra%20-%20Tal%20Vez.mp3?alt=media&token=1d0ace0f-e345-42ef-b39c-d69e6f4127b4"));
         return canciones;
     }
 
     public static List<Cancion> Sech() {
         List<Cancion> canciones = new ArrayList<>();
-        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.cover,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
-        canciones.add(new Cancion(3,"Que Le De","Rauw Alejandro", R.drawable.cover,"http://youtubemp33.net/@download/320-5cd183c57491f-8920000/mp3/8JnfIa84TnU/Clean%2BBandit%2B-%2BSolo%2B%2528feat.%2BDemi%2BLovato%2529%2B%255BOfficial%2BVideo%255D.mp3"));
+        canciones.add(new Cancion(1,"Otro Trago","Sech", R.drawable.otro_trago,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/sech_song.mp3?alt=media&token=397b6750-863b-424d-8db2-e94483cb9e4b"));
         return canciones;
     }
 
@@ -76,7 +74,7 @@ public class Inventario {
         canciones.add(new Cancion(9,"Pasarela","Dalmata", R.drawable.pasarela,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Pasarela%20%20Dalmata%20-%20Video%20Oficial.mp3?alt=media&token=5f3a3acd-0576-4b2f-adc1-15d381afce55"));
         canciones.add(new Cancion(10,"Tal Vez","Paulo Londra", R.drawable.tal_vez,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Paulo%20Londra%20-%20Tal%20Vez.mp3?alt=media&token=1d0ace0f-e345-42ef-b39c-d69e6f4127b4"));
         canciones.add(new Cancion(11,"Calma","Pedro Capo", R.drawable.calma,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Pedro%20Cap%C3%B3%20Farruko%20-%20Calma%20(Remix%20-%20Official%20Video).mp3?alt=media&token=7440426f-a60d-45de-b943-2e18aa9de1b5"));
-        canciones.add(new Cancion(12,"Sunflower","Sunflower", R.drawable.sunflower,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Post%20Malone%20Swae%20Lee%20-%20Sunflower.mp3?alt=media&token=feab98f3-c1b9-48da-a944-50bd881b83ae"));
+        canciones.add(new Cancion(12,"Sunflower","Post Malone", R.drawable.sunflower,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Post%20Malone%20Swae%20Lee%20-%20Sunflower.mp3?alt=media&token=feab98f3-c1b9-48da-a944-50bd881b83ae"));
         canciones.add(new Cancion(13,"Pumped Up Kicks","Foster The People", R.drawable.pumped_up_kicks,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Pumped%20Up%20Kicks.mp3?alt=media&token=4ebbfe73-34aa-4e3a-aac5-c9834cbcab7e"));
         canciones.add(new Cancion(14,"The Scientist","Coldplay", R.drawable.the_scientist,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/The%20Scientist%20-Coldplay.mp3?alt=media&token=fad6a354-ab9f-45d2-b2b2-eb7fc5312238"));
         canciones.add(new Cancion(15,"See You Again","Wiz Khalifa", R.drawable.see_you_again,"https://firebasestorage.googleapis.com/v0/b/canciones-mp3.appspot.com/o/Wiz%20Khalifa%20-%20See%20You%20Again%20ft.%20Charlie%20Puth.mp3?alt=media&token=799e0388-1e2c-447e-8169-5e4f5e441a31"));

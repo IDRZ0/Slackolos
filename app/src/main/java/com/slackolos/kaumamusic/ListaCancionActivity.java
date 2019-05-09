@@ -52,8 +52,8 @@ public class ListaCancionActivity extends AppCompatActivity {
                 cancionArray = Inventario.Estudiar();
             }
         } else if(artista != null) {
-            if (artista.getNombreArtista().equals("Darell")) {
-                cancionArray = Inventario.Darell();
+            if (artista.getNombreArtista().equals("Paulo Londra")) {
+                cancionArray = Inventario.Paulo();
             } else if (artista.getNombreArtista().equals("Sech")) {
                 cancionArray = Inventario.Sech();
             }

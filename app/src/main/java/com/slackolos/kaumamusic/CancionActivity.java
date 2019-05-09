@@ -58,18 +58,34 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               playMp3(url);
+               if(!mediaPlayer.isPlaying()){
+                   playMp3(url);
+               }
             }
         });
 
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.pause();
+               if(mediaPlayer.isPlaying()) {
+                   mediaPlayer.pause();
+               }
             }
         });
 
         actionBar();
+    }
+
+    @Override
+    protected void onStop(){
+        mediaPlayer.stop();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mediaPlayer.stop();
+        super.onDestroy();
     }
 
     public void actionBar() {
