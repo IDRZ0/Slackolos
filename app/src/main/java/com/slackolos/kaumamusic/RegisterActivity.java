@@ -4,8 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.Gravity;
@@ -41,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mContext = this;
+        actionBar();
 
         parent = new LinearLayout(mContext);
         parent.setBackgroundResource(R.drawable.gra);
@@ -106,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                // confirPass();
+                //confirPass();
 
                 Usuario usuario1 = new Usuario();
                 usuario1.setNombre(user.getText().toString());
@@ -130,6 +133,11 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void actionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     private void confirPass() {
@@ -156,5 +164,6 @@ public class RegisterActivity extends AppCompatActivity {
         dialog.setCancelable(false);
         dialog.show();
     }
+
 
 }

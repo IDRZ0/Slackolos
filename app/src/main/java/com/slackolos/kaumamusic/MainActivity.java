@@ -3,6 +3,7 @@ package com.slackolos.kaumamusic;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -14,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import static android.content.Context.*;
 
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tUser = findViewById(R.id.tUser);
         tUser.setText(usuario);
 
-        Toast.makeText(this, "Bienvenid@ " + usuario, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Bienvenid@ " + usuario, Toast.LENGTH_SHORT).show();
     }
 
     public void listaCancion(View view) {
@@ -88,4 +90,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void cerrarSesion(View view) {
+        this.finish();
+    }
 }

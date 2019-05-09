@@ -3,6 +3,7 @@ package com.slackolos.kaumamusic;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +34,8 @@ public class ListaCancionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
         mContext = this;
 
+        actionBar();
+
         Intent intent = getIntent();
         String string = intent.getStringExtra(Constantes.PLAYLIST_1);
         String string1 = intent.getStringExtra(Constantes.ARTISTA);
@@ -59,6 +62,12 @@ public class ListaCancionActivity extends AppCompatActivity {
         }
 
         addEvents();
+    }
+
+
+    public void actionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void addEvents(){

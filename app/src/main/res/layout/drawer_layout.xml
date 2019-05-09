@@ -12,13 +12,12 @@
         android:id="@+id/tUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
         android:text="Usuario"
         android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="32dp"
-        />
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="120dp"
@@ -56,11 +55,20 @@
     <Button
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Fiestas"
-        android:textSize="20dp"
-        android:onClick="listaFiesta"
         android:background="@drawable/button_background2"
         android:gravity="center"
-        />
+        android:onClick="listaFiesta"
+        android:text="Fiestas"
+        android:textSize="20dp"
+        android:layout_marginBottom="32dp"/>
 
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background2"
+        android:gravity="center"
+        android:text="Cerrar Sesion"
+        android:textSize="20dp"
+        android:onClick="cerrarSesion"
+        />
 </LinearLayout>

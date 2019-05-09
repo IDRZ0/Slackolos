@@ -6,11 +6,13 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.slackolos.kaumamusic.constantes.Constantes;
@@ -30,6 +32,7 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
     private Button pauseButton;
 
     private MediaPlayer mediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playMp3(url);
+               playMp3(url);
             }
         });
 
@@ -65,6 +68,13 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
                 mediaPlayer.pause();
             }
         });
+
+        actionBar();
+    }
+
+    public void actionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     public void playMp3(String _link){
@@ -105,4 +115,6 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
             mediaPlayer.start();
         }
     }
+
+
 }

@@ -63,22 +63,22 @@
             android:layout_height="64dp"
             android:background="@drawable/previous"
             />
+
         <Button
             android:id="@+id/play"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/play"
-            />
+            android:background="@drawable/play" />
+
         <Button
             android:id="@+id/pause"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/pause"
-            />
+            android:background="@drawable/pause"/>
+
         <Button
             android:id="@+id/next"
             android:layout_width="64dp"

@@ -21,22 +21,22 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".RegisterActivity" android:parentActivityName=".LoginActivity">
 
         </activity>
-        <activity android:name=".ListaCancionActivity">
+        <activity android:name=".ListaCancionActivity" android:parentActivityName=".MainActivity">
 
         </activity>
-        <activity android:name=".CancionActivity">
+        <activity android:name=".CancionActivity" android:parentActivityName=".ListaCancionActivity">
 
         </activity>
-        <activity android:name=".PlaylistActivity">
+        <activity android:name=".PlaylistActivity" android:parentActivityName=".MainActivity">
 
         </activity>
-        <activity android:name=".ArtistaActivity">
+        <activity android:name=".ArtistaActivity" android:parentActivityName=".MainActivity">
 
         </activity>
-        <activity android:name=".FiestasActivity">
+        <activity android:name=".FiestasActivity" android:parentActivityName=".MainActivity">
 
         </activity>
     </application>

@@ -3,6 +3,7 @@ package com.slackolos.kaumamusic;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,7 +37,13 @@ public class PlaylistActivity extends AppCompatActivity {
         playlistAdapter = new PlaylistAdapter(mContext, playlistArray);
         playlists.setAdapter(playlistAdapter);
 
+        actionBar();
         addEvents();
+    }
+
+    public void actionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     private void addEvents() {

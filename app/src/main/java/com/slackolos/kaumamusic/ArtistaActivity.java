@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,6 +32,7 @@ public class ArtistaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
         mContext = this;
+        actionBar();
 
         artistas = findViewById(R.id.canciones);
         artistaArray = Inventario.getArtistas();
@@ -46,5 +48,10 @@ public class ArtistaActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void actionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 }

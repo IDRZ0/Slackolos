@@ -8,6 +8,15 @@
     android:background="@drawable/title"
     tools:context=".LoginActivity">
 
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="wrap_content"
+        android:layout_height="270dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="30dp" />
+
     <LinearLayout
         android:id="@+id/singIn"
         android:layout_width="match_parent"
@@ -104,4 +113,5 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:onClick="registrar"/>
+
 </RelativeLayout>
