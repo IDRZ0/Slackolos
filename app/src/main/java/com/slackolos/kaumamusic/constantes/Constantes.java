@@ -19,4 +19,7 @@ public class Constantes {
 
     public static final String N_BASE = "slackolos.db";
     public static final int V_BASE = 1;
+
+    public static final String STRING_PREFERENCES = "datos_usuarios";
+    public static final String PREFERENCE_ESTADO_BUTTON_SESION = "estado.button.sesion";
 }

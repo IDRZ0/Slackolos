@@ -6,4 +6,6 @@
     <string name="sing_up">Registrarse</string>
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
+
+    <string name="cerrar_sesion">Cerrar Sesión</string>
 </resources>

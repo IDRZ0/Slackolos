@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cerrarSesion(View view) {
+        LoginActivity.chageEstadoButton(mcontext,false);
+        Intent intent = new Intent(mcontext, LoginActivity.class);
+        startActivity(intent);
         this.finish();
     }
 }
