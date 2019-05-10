@@ -15,10 +15,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.slackolos.kaumamusic.constantes.Constantes;
 import com.slackolos.kaumamusic.listas.Cancion;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CancionActivity extends AppCompatActivity implements MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnBufferingUpdateListener {
@@ -29,9 +33,12 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
     private TextView cancionArtista;
     private String url;
     private Button playButton;
-    private Button pauseButton;
+    private Button nextButton;
+    private Button prevButton;
 
     private MediaPlayer mediaPlayer;
+    private List<Cancion> canciones = new ArrayList<>();
+    private Gson gson = new Gson();
 
 
     @Override
@@ -45,11 +52,19 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         nombreCancion = findViewById(R.id.nombreCancion);
         cancionArtista = findViewById(R.id.cancionArtista);
         playButton = findViewById(R.id.play);
-        pauseButton = findViewById(R.id.pause);
+        nextButton = findViewById(R.id.next);
+        prevButton = findViewById(R.id.previous);
 
         Intent intent = getIntent();
         String json = intent.getStringExtra(Constantes.CANCION);
-        Cancion cancion = new Gson().fromJson(json, Cancion.class);
+        String json1 = intent.getStringExtra(Constantes.LISTA_CANCION);
+
+        try {
+            Type listType = new TypeToken<ArrayList<Cancion>>(){}.getType();
+            canciones = gson.fromJson(json1,listType);
+        } catch (Exception e){}
+
+        final Cancion cancion = gson.fromJson(json, Cancion.class);
         nombreCancion.setText(cancion.getNombreCancion());
         cancionArtista.setText(cancion.getCancionArtsta());
         imagenCancion.setImageResource(cancion.getImagenCancion());
@@ -59,17 +74,24 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
             @Override
             public void onClick(View v) {
                if(!mediaPlayer.isPlaying()){
+                   playButton.setBackgroundResource(R.drawable.pauseu);
                    playMp3(url);
+               } else {
+                   playButton.setBackgroundResource(R.drawable.playu);
+                   mediaPlayer.pause();
                }
             }
         });
 
-        pauseButton.setOnClickListener(new View.OnClickListener() {
+        nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if(mediaPlayer.isPlaying()) {
-                   mediaPlayer.pause();
-               }
+                if(mediaPlayer.isPlaying()){
+                    mediaPlayer.stop();
+                    goToNext(cancion, canciones);
+                } else {
+                    goToNext(cancion, canciones);
+                }
             }
         });
 
@@ -132,5 +154,13 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         }
     }
 
+    private void goToNext(Cancion actual, List<Cancion> canciones) {
+        if(canciones.size()>1){
+            actual.setIdCancion(actual.getIdCancion()+1);
+            Intent intent = new Intent(context, CancionActivity.class);
+            intent.putExtra(Constantes.CANCION,gson.toJson(actual));
+            startActivity(intent);
+        }
+    }
 
 }

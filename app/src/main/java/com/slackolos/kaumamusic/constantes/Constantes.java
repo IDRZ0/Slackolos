@@ -12,6 +12,8 @@ public class Constantes {
     public static final int REGISTRO = 1;
 
     public static final String CANCION = "cancion";
+    public static final String LISTA_CANCION = "canciones";
+
 
     public static final String PLAYLIST_1 = "playlist";
 

@@ -28,6 +28,8 @@ public class ListaCancionActivity extends AppCompatActivity {
     private CancionAdapter cancionAdapter;
     private List<Cancion> cancionArray = new ArrayList<>();
 
+    private Gson gson = new Gson();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,8 @@ public class ListaCancionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cancion cancion = cancionArray.get(position);
                 Intent intent = new Intent(mContext, CancionActivity.class);
-                intent.putExtra(Constantes.CANCION, new Gson().toJson(cancion));
+                intent.putExtra(Constantes.CANCION, gson.toJson(cancion));
+                intent.putExtra(Constantes.LISTA_CANCION, gson.toJson(cancionArray));
                 startActivity(intent);
             }
         });
