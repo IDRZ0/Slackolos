@@ -27,7 +27,7 @@
         <activity android:name=".ListaCancionActivity" android:parentActivityName=".MainActivity">
 
         </activity>
-        <activity android:name=".CancionActivity" android:parentActivityName=".ListaCancionActivity">
+        <activity android:name=".CancionActivity" android:parentActivityName=".MainActivity">
 
         </activity>
         <activity android:name=".PlaylistActivity" android:parentActivityName=".MainActivity">

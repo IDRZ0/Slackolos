@@ -60,9 +60,11 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         String json1 = intent.getStringExtra(Constantes.LISTA_CANCION);
 
         try {
-            Type listType = new TypeToken<ArrayList<Cancion>>(){}.getType();
-            canciones = gson.fromJson(json1,listType);
-        } catch (Exception e){}
+            Type listType = new TypeToken<ArrayList<Cancion>>() {
+            }.getType();
+            canciones = gson.fromJson(json1, listType);
+        } catch (Exception e) {
+        }
 
         final Cancion cancion = gson.fromJson(json, Cancion.class);
         nombreCancion.setText(cancion.getNombreCancion());
@@ -73,24 +75,40 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if(!mediaPlayer.isPlaying()){
-                   playButton.setBackgroundResource(R.drawable.pauseu);
-                   playMp3(url);
-               } else {
-                   playButton.setBackgroundResource(R.drawable.playu);
-                   mediaPlayer.pause();
-               }
+                if (!mediaPlayer.isPlaying()) {
+                    playButton.setBackgroundResource(R.drawable.pauseu);
+                    playMp3(url);
+                } else {
+                    playButton.setBackgroundResource(R.drawable.playu);
+                    mediaPlayer.pause();
+                }
             }
         });
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mediaPlayer.isPlaying()){
-                    mediaPlayer.stop();
-                    goToNext(cancion, canciones);
-                } else {
-                    goToNext(cancion, canciones);
+                if (canciones.size() > 1) {
+                    if (mediaPlayer.isPlaying()) {
+                        mediaPlayer.stop();
+                        goToNext(cancion);
+                    } else {
+                        goToNext(cancion);
+                    }
+                }
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (canciones.size() > 1) {
+                    if (mediaPlayer.isPlaying()) {
+                        mediaPlayer.stop();
+                        goToPrev(cancion);
+                    } else {
+                        goToPrev(cancion);
+                    }
                 }
             }
         });
@@ -99,7 +117,7 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
     }
 
     @Override
-    protected void onStop(){
+    protected void onStop() {
         mediaPlayer.stop();
         super.onStop();
     }
@@ -115,7 +133,7 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    public void playMp3(String _link){
+    public void playMp3(String _link) {
 
         mediaPlayer.reset();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -149,17 +167,44 @@ public class CancionActivity extends AppCompatActivity implements MediaPlayer.On
 
     @Override
     public void onPrepared(MediaPlayer mp) {
-        if(!mediaPlayer.isPlaying()) {
+        if (!mediaPlayer.isPlaying()) {
             mediaPlayer.start();
         }
     }
 
-    private void goToNext(Cancion actual, List<Cancion> canciones) {
-        if(canciones.size()>1){
-            actual.setIdCancion(actual.getIdCancion()+1);
-            Intent intent = new Intent(context, CancionActivity.class);
-            intent.putExtra(Constantes.CANCION,gson.toJson(actual));
-            startActivity(intent);
+    private void goToNext(Cancion actual) {
+        if (canciones.size() > 1) {
+            if (actual.getIdCancion() + 1 < canciones.size()) {
+                Cancion siguiente = canciones.get(actual.getIdCancion() + 1);
+                Intent intent = new Intent(context, CancionActivity.class);
+                intent.putExtra(Constantes.CANCION, gson.toJson(siguiente));
+                intent.putExtra(Constantes.LISTA_CANCION, gson.toJson(canciones));
+                startActivity(intent);
+            } else {
+                Cancion siguiente = canciones.get(0);
+                Intent intent = new Intent(context, CancionActivity.class);
+                intent.putExtra(Constantes.CANCION, gson.toJson(siguiente));
+                intent.putExtra(Constantes.LISTA_CANCION, gson.toJson(canciones));
+                startActivity(intent);
+            }
+        }
+    }
+
+    private void goToPrev(Cancion actual) {
+        if (canciones.size() > 1) {
+            if (actual.getIdCancion() > 0) {
+                Cancion anterior = canciones.get(actual.getIdCancion() - 1);
+                Intent intent = new Intent(context, CancionActivity.class);
+                intent.putExtra(Constantes.CANCION, gson.toJson(anterior));
+                intent.putExtra(Constantes.LISTA_CANCION, gson.toJson(canciones));
+                startActivity(intent);
+            } else {
+                Cancion anterior = canciones.get(canciones.size() - 1);
+                Intent intent = new Intent(context, CancionActivity.class);
+                intent.putExtra(Constantes.CANCION, gson.toJson(anterior));
+                intent.putExtra(Constantes.LISTA_CANCION, gson.toJson(canciones));
+                startActivity(intent);
+            }
         }
     }
 

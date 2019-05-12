@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (this.toolbar != null) {
 
-         //   this.toolbar.setTitle(R.string.app_name);
-         //   this.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorAccent));
-
             drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
             drawerToggle.setDrawerIndicatorEnabled(false);
             drawerToggle.setHomeAsUpIndicator(R.drawable.icon_hamburger);
@@ -63,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     public void recibirDatos() {
         Intent intent = getIntent();
         String usuario = intent.getStringExtra("usuario");
-        String contraseña = intent.getStringExtra("password");
         TextView tUser = findViewById(R.id.tUser);
         tUser.setText(usuario);
 
